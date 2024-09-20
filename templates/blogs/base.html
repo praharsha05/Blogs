@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+
+<head>
+  <title>PRO_BLOGS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href={% static "css/base.css" %}>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse" style="background-image: url('images/bcg_login.jpg'); color: gold">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'home' %}">PRO_BLOGS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'index'%}">Home</a></li>
+        <li class=""><a href="{% url 'newblog'%}"> + New </a></li>
+        <li class=""><a href="{% url 'myblogs'%}"> MyBlogs </a></li>
+         <li class=""><a href="{% url 'drafts'%}"> MyDrafts </a></li>
+       <li><a href="{%  url 'about' %}">About</a></li>
+      <li><a href="{% url 'LinkedIn'%}">LinkedIn</a></li>
+        <li><a href="{% url 'GitHub'%}">GitHub</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href={%  url 'admin:index' %}><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+         <li><a href={%  url 'sign_up' %}><span class="glyphicon glyphicon-user"></span> Sign-Up </a></li>
+        <li><a href="{% url 'logout_page' %}"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
+      <li><a href="{% url 'login_page' %}"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+    </ul>
+  </div>
+</nav>
+
+{% block base %}
+{% endblock %}
+{#<div class="container" >#}
+{# <!-- this acts as body info/data for base and will be pulled for every extend -->#}
+{#</div>#}
+</body>
+</html>

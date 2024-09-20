@@ -1,0 +1,87 @@
+{% extends "blogs/base.html" %}
+{% block base %}
+{#    {% load static %}#}
+{#    <link rel="stylesheet" href={% static "css/sign_up.css" %}>#}
+<style>
+
+
+.hd{
+      font-size: 50px;
+  background: -webkit-linear-gradient(left, #41cee0 20%, #e05441 60%, #485991 100%, #8e2029 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   font-family: "Plantagenet Cherokee", cursive;
+}
+.total {
+    height: 100%;
+    max-height: 100%;
+    background-image: url("/static/images/bcg_login.jpg");;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bx{
+    background-color: white; /* Green background */
+    border: blueviolet; /* Remove borders */
+    color: #cc0e0e; /* White text color */
+    padding: 15px 32px; /* Padding for size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: grid; /* Make it inline */
+    font-size: 12px; /* Font size */
+    margin: 8px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50px;
+    height: 100%;
+}
+.grp {
+    background-image: url("/static/images/bcg_login.jpg");
+    background-size: 100% ;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-blend-mode: color-burn;
+    height: 100%;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    color: #fa2020;
+}
+
+.signup {
+    color: #ce640b;
+    display: inline;
+    margin-left: 50%;
+}
+</style>
+
+<div class="total">
+ <div class="grp">
+  <!-- Sign up form -->
+  <form method="POST">
+    {% csrf_token %}
+      <div class="form-group">
+          <br>
+          <h2 class="hd"> Sign up here and get started ! </h2>
+          <br>
+        <div class="bx">
+          <H4 class="username"> Username : {{ form.username }} </H4> <br>
+          <H4 class="email"> Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ form.email }} </H4><br>
+          <H4 class="password"> Password : {{ form.password }} </H4> <br>
+        </div>
+      </div>
+
+    <div class="signup">
+      <button class="btn btn-outline-info"  type="submit">Sign up</button>
+    </div>
+  </form>
+
+
+  <!-- Sign in form -->
+  <div class="border-top pt-3" style="font-size: large">
+    <small class="text-muted" style="text-align: center; margin-left: 40%; margin-right: auto" >
+      Already have an account? <a class="ml-2" href="{% url "login_page" %}" style="color: red">Sign in</a>
+    </small>
+  </div>
+</div>
+</div>
+
+{% endblock %}

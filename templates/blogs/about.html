@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% load static %}
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+         <link rel="stylesheet" href={% static "css/about.css" %}>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+{% block base %}
+
+<body>
+<div class="about-section">
+  <h1>About Us !</h1>
+  <p>Just Entertaining fellow members to blog... blog... and log!</p>
+ </div>
+
+<h2 style="text-align:center">Our Team</h2>
+
+<div class="row">
+
+    <div class="c1">
+  <div class="column">
+    <div class="card">
+      <img src ="{% static "images/me.jpeg" %}" alt="Uh oh!">
+      <div class="container">
+        <h2>Praharsha Sarma</h2>
+        <p class="title">Author</p>
+        <p>Praharsha is just a person who loves being exploring things and loves telling tales to the world !
+            He loves trekking , swimming and basically a melophile . </p>
+        <p>praharshasarma05@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+        </div>
+
+    <div class="c2">
+    <div class="column">
+    <div class="card">
+      <img src ="{% static "images/aadi.jpeg" %}" alt="Uh oh!">
+      <div class="container">
+        <h2>Aadarsh Srivastava</h2>
+        <p class="title">Co-Author</p>
+        <p> Aadarsh here is an MBA grad and a professional story-teller.
+         He loves to spend time learning about things around him</p>
+        <p>aadisrivastava60@gmail.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+    </div>
+
+</div>
+
+
+
+<div  style="width:auto; margin-left:auto; margin-right:auto; font-size: 100px;  text-align: center " >
+    <h3> Home : <a href="{%  url 'home' %}"><i class="fa fa-home"></i></a></h3>
+</div>
+
+</body>
+
+{%  endblock %}
+</html>

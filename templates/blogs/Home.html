@@ -1,0 +1,92 @@
+{% extends "blogs/base.html" %}
+{% block base %}
+    {% load static %}
+{#    <link rel="stylesheet" href={% static "css/sign_up.css" %}>#}
+<style>
+
+body, html {
+  height: 100%;
+}
+.bx{
+    color: white;
+}
+
+.box {
+    background-position: center;
+    margin-left: 500px;
+
+}
+
+h2 {
+  font-size: 50px;
+  background: -webkit-linear-gradient(top,orange 20%, white 60%, #48ff00 100%,blue 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+   font-family: 'Snell Roundhand', cursive;
+}
+
+
+
+.txt {
+    margin-left: 50px;
+}
+
+.cnt {
+    text-align: center;
+}
+
+.box {
+    background-color: white; /* Green background */
+    border: blueviolet; /* Remove borders */
+    color: #cc0e0e; /* White text color */
+    padding: 15px 32px; /* Padding for size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it inline */
+    font-size: 12px; /* Font size */
+    margin: 8px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.grp {
+    background-image: url("/static/images/home.jpg");
+    {# background-color: cornflowerblue;#}
+    background-size: cover;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-blend-mode: color-burn;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    color: black;
+}
+
+
+</style>
+<div class="grp">
+    <div class="txt">
+        <h2 class = 'head'>Hola,  Welcome to Pro Blogs. </h2><br>
+        <br><h5 style="color: #48ff00;"> ☆ &nbsp; Discover the latest blogs by fellow bloggers who have exquisite taste in blogging just like you !</h5><br>
+        <h5 class="bx" style="margin-right: 500px"><br><br>
+            We’re thrilled to have you here!
+            Whether you're looking for expert advice, engaging content, or a community of like-minded enthusiasts, you've come to the right place.
+            <br>Dive into our carefully curated articles, explore our resources, and connect with others who share your passions.
+            <br>Our mission is to provide you with valuable information and a supportive space where you can grow and thrive.
+
+            <br><br><br><br><br><br>
+            <em>Thank you for visiting—let’s embark on this exciting journey together!</em>
+            </h5>
+    </div>
+    <br><br><br><br><br><br><br>
+    <div class="cnt">
+{#            <div class="box"><a href="{% url 'index'%}">Blogs</a></div>#}
+            <div class="box"><a href="{% url 'login_page'%}">Login</a></div>
+            <div class="box"><a href="{% url 'about'%}">About</a></div>
+    </div>
+</div>
+
+{% endblock %}

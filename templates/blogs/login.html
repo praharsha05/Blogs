@@ -1,0 +1,55 @@
+{% extends "blogs/base.html" %}
+{% block base %}
+      {% load static %}
+<style>
+
+.btn{
+    background-color: white; /* Blue background */
+  border: green; /* Remove borders */
+  color: #cc0e0e; /* color text */
+  padding: 12px 16px; /* Some padding */
+    border-width: 10px;
+  font-size: 13px; /* Set a font size */
+  {#cursor: pointer; /* Mouse pointer on hover */#}
+    {#border-radius: 40px;#}
+    border-radius: 200px;
+    {#margin-left: 100px;#}
+}
+
+.jumbotron {
+    background-image: url("/static/images/bcg_login.jpg");
+    background-size: cover;
+    background-blend-mode: color-burn;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    height: 100%;
+    overflow: auto;
+    max-width: 100%;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    color: #cc6711;
+}
+
+</style>
+{#    <link rel="stylesheet" href={% static "css/login_page.css" %}>#}
+
+       <div class="jumbotron" id="frm" style="text-align: center; background-color: burlywood; align-items: center; " >
+        <form method="POST" action="{% url 'login_page' %}">
+            {% csrf_token %}
+
+            <label for="username">Username : </label>
+            <input type="text" name="username" placeholder="Enter Username">
+            <br>
+            <label for="password"> Password : </label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <br><br>
+{#            <button class="btn"><i class="msg"></i> {{ msg }} </button>#}
+            <div class="btn"><i class="msg"></i> {{ msg }} </div>
+            <br><br>
+
+            <input style="color: black" type="submit" name="" value="Sign-in" >
+
+        </form>
+        </div>
+{% endblock %}

@@ -1,0 +1,90 @@
+Here are the Published Blogs !
+
+Title : sample
+Category : partial
+Author : unknown
+Created on : 2024-08-27 18:25:09.103826+00:00
+Content : body Styles: Sets the overall font, background color, and basic padding for the entire page.
+.article-container Styles: Centers the article on the page, adds padding, a white background, rounded corners, and a subtle shadow for a card-like effect.
+h1 Styles: Colors the heading and adjusts the size for emphasis.
+p Styles: Adjusts line height for readability and spacing between paragraphs.
+.author Styles: Italicizes and colors the author’s name to differentiate it from the rest of the content
+Loved By : 5
+Liked By : 2
+Disliked By : 2
+
+
+
+
+Title : PRO_BLOGS
+Category : PRGSG
+Author : unknown
+Created on : 2024-08-31 17:20:58.635282+00:00
+Content : SESSION
+Loved By : 1
+Liked By : 0
+Disliked By : 2
+
+
+
+
+Title : sunshine
+Category : pass
+Author : pass
+Created on : 2024-09-01 03:22:09.314747+00:00
+Content : pass
+Loved By : 0
+Liked By : 0
+Disliked By : 0
+
+
+
+
+Title : sessh
+Category : sess
+Author : pass
+Created on : 2024-09-01 03:33:33.200905+00:00
+Content : sess
+Loved By : 2
+Liked By : 0
+Disliked By : 1
+
+
+
+
+Title : proi
+Category : pro
+Author : pro
+Created on : 2024-09-01 18:04:38.139706+00:00
+Content : pro
+Loved By : 0
+Liked By : 1
+Disliked By : 1
+
+
+
+
+Title : login
+Category : login
+Author : login
+Created on : 2024-09-02 18:13:26.121208+00:00
+Content : login
+Loved By : 1
+Liked By : 0
+Disliked By : 0
+
+
+
+
+Title : dr
+Category : dr
+Author : pro
+Created on : 2024-09-03 16:08:51.062081+00:00
+Content : dr
+Loved By : 0
+Liked By : 0
+Disliked By : 0
+
+
+
+

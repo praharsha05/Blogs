@@ -1,0 +1,173 @@
+{% extends "blogs/base.html" %}
+{% block base%}
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<style>
+.containers {
+    background-image: url("/static/images/dfa.jpg");
+    {# background-color: cornflowerblue;#}
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-blend-mode: color-burn;
+    height: 100%;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    color: black;
+}
+.fx {
+    display: flex;
+}
+
+.icon-fx {
+    display: flex;
+    border-radius: 200px;
+}
+
+.btn:hover {
+  background-color: #e38332;
+}
+.popup-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  background-color: white; /* Blue background */
+  border: none; /* Remove borders */
+  color: #cc0e0e; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 40px;
+    {#margin-left: 100px;#}
+}
+
+textarea
+{
+  border:1px solid #999999;
+  width:75%;
+  margin:5px 0;
+  padding:3px;
+    box-sizing: border-box;
+    resize: both;
+    overflow: auto;
+    margin-left: 100px;
+
+}
+
+#rt {
+    position: absolute;
+  right: 10px;
+    border: 3px solid blue;
+}
+#idx {
+    display: flex;
+}
+
+
+
+.my-button {
+    background-color: white; /* Green background */
+    border: blueviolet; /* Remove borders */
+    color: #cc0e0e; /* White text color */
+    padding: 15px 32px; /* Padding for size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it inline */
+    font-size: 12px; /* Font size */
+    margin: 8px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50px; /* Rounded corners */
+}
+
+    /* Full height */
+  /* Center and scale the image nicely */
+</style>
+
+
+
+<div class="containers">
+<div id="idx">
+    <H1 class="grp" style="margin-left: 100px; color: blueviolet"><em> Published Blogs </em></H1>
+    <br><br>
+    <div class="icon-fx" >
+        <form action="{% url 'download' 'user' %}" method="post">
+                {% csrf_token %}
+                 <button class="btn" id="rt"><i class="fa fa-download"></i> </button>
+            </form>
+    </div>
+</div>
+    <br><br>
+    {% for x in blogs %}
+
+        <div class="fx">
+        <H3 style="margin-left: 100px"> {{ x.title }}</H3>
+        {#<h4> {{ x.id }}</h4>#}
+        <H5 style="border: 2px solid red;padding: 10px; border-radius: 25px; margin-left: 16px">{{ x.category }}</H5>
+{#        <H5 style="border: 2px solid #130808;padding: 10px; border-radius: 25px; margin-left: 16px">Author: {{ x.uname }}</H5>#}
+        <H5 style="border: 2px solid #0022ff;padding: 10px; border-radius: 25px; margin-left: 16px">{{ x.date }} GMT</H5>
+
+
+{#            {% if x.uname == username %}#}
+            {# Give option of delete only to who created them  #}
+{#            <form action="{% url 'delete_publish' x.id %}" method="post">#}
+{#                {% csrf_token %}#}
+{#                <button class="my-button" type="submit">Delete</button>#}
+{#            </form>#}
+{#            {% endif %}#}
+{##}
+{#            {% if x.uname == username %}#}
+            {# Give option of delete only to who created them  #}
+{#            <form action="{% url 'edit_publish' x.id %}" method="post">#}
+{#                {% csrf_token %}#}
+{#                <button class="my-button" type="submit">Update</button>#}
+{#            </form>#}
+{#            {% endif %}#}
+
+        <br><br>
+        </div>
+        <div class="boxsizingBorder">
+        <em>
+        <textarea autosize> {{ x.text }} </textarea>
+        </em>
+        </div>
+
+        <div class="icon-fx">
+        <form action="{% url 'icon_publish' x.id "love" %}" method="post">
+                {% csrf_token %}
+                 <button class="btn" style="margin-left: 100px;"><i class="fa fa-heart-o"> {{ x.love }}</i></button>
+            </form>
+        <form action="{% url 'icon_publish' x.id "like" %}" method="post">
+                {% csrf_token %}
+                 <button class="btn"><i class="fa fa-thumbs-o-up"></i> {{ x.like }} </button>
+        </form>
+        <form action="{% url 'icon_publish' x.id "dislike" %}" method="post">
+                {% csrf_token %}
+                 <button class="btn"><i class="fa fa-thumbs-o-down"></i> {{ x.dislike }} </button>
+            </form>
+        </div>
+        <br><br>
+
+
+    {% endfor %}
+
+{#<div>#}
+{#            <form action="{% url 'pdf'%}" method="post">#}
+{#                {% csrf_token %}#}
+{#                 <button class="btn"><i class="fa fa-download"></i>  </button>#}
+{#            </form>#}
+{#</div>#}
+</div>
+
+
+
+{% endblock %}

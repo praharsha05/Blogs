@@ -1,0 +1,102 @@
+{% extends "blogs/base.html" %}
+{% block base%}
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{#<script src="/static/js/popup.js"></script>#}
+{#<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>#}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+.btn {
+    background-color: white; /* Green background */
+    border: blueviolet; /* Remove borders */
+    color: #cc0e0e; /* White text color */
+    padding: 15px 32px; /* Padding for size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it inline */
+    font-size: 12px; /* Font size */
+    margin: 8px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.frm {
+    margin-left: 20%;
+}
+.grp {
+   background-image: url("/static/images/dfa.jpg") ;
+background-repeat: no-repeat;
+   color: black;
+    margin-left: auto;
+    margin-right: auto;
+    /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-size: cover;
+}
+
+.fx {
+    display: flex;
+}
+.cnt {
+    background-image: url("/static/images/dfa.jpg");
+    background-repeat: no-repeat;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    /* Full height */
+    height: 750px;
+  /* Center and scale the image nicely */
+    background-position: center ;
+    background-size: cover;
+     {#background-color: cornflowerblue;#}
+}
+
+</style>
+
+{##}
+{##}
+{#</body>#}
+<div class="cnt" >
+
+<H1 style="margin-left: 20%;"><em> Making it more interesting ?... Great !</em></H1><br><br>
+
+ <div class="grp">
+  <form method="POST">
+    {% csrf_token %}
+      <div class="frm">
+          <br>
+          <br>
+         <label for="title"> Title : </label>
+            <input type="text" name="title" value= {{ draft.title }}  >
+          <br><br>
+          <label for="category">Category : </label>
+            <input type="text" name="category" value ={{ draft.category }}>
+           <br><br>
+
+          <H5><b >Content :</b></H5>
+          <label for="text"> </label>
+         <textarea   name="text" style="width: 624px; height: 411px;" >{{ draft.text }}</textarea>
+      </div>
+
+      <div class="fx">
+
+       <form action="{% url 'drafts' %}" method="post">
+                {% csrf_token %}
+                <button class="btn" type="submit" style="align-content: center;margin-left: 50%; ">Back</button>
+       </form>
+
+      <button  class= "btn"   type="submit" > Submit </button>
+     </div>
+  </form>
+</div>
+
+
+
+
+{% endblock %}

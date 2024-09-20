@@ -1,0 +1,68 @@
+{% extends "blogs/base.html" %}
+{% block base %}
+    {% load static %}
+{#    <link rel="stylesheet" href={% static "css/sign_up.css" %}>#}
+<style>
+.grp {
+   background-image: url("/static/images/bcg_login.jpg") ;
+background-repeat: no-repeat;
+   color: black;
+    margin-left: auto;
+    margin-right: auto;
+    /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-size: cover;
+}
+
+
+.btns {
+    display: flex;
+    color: burlywood;
+}
+.signup {
+    color: darkgoldenrod;
+}
+</style>
+
+
+ <div class="grp">
+  <!-- Sign up form -->
+  <form method="POST">
+    {% csrf_token %}
+      <div class="frm">
+          <br>
+          <h2 style="color: orange"> Here's your blog form ! </h2>
+          <br>
+         <label for="title"> </label>
+            <input type="text" name="title" placeholder="Title..." size="60" >
+          <br><br>
+          <label for="category"> </label>
+            <input type="text" name="category" placeholder="Category" size="25">
+          <br>
+          <br>
+          <label for="text">  </label>
+{#           <input  type="text" name="text" placeholder="Blog Content" style="resize:both; overflow:auto;">#}
+         <textarea  placeholder="blog content..." name="text" style="width: 624px; height: 411px;"></textarea>
+      </div>
+ <br><br>
+        <div class="btns">
+    <input type="radio" id="publish" name="drone" value="publish" style="margin-right:16px" checked />
+    <label for="publish" style="margin-right:16px"> Publish </label>
+    <input type="radio" id="draft" name="drone" value="draft" style="margin-right:16px"/>
+    <label for="draft" > Draft </label>
+        </div>
+ <br><br>
+
+</fieldset>
+    <div>
+      <button  style="align-content: center"  type="submit" > Submit </button>
+    </div>
+  </form>
+     <br><br>
+     <p style="text-align: center; font-size: large"> Happy Blogging !</p>
+ </div>
+
+
+{% endblock %}
